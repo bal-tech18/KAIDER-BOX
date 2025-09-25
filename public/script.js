@@ -116,3 +116,42 @@ async function updateStorageUsage() {
 // 🚀 Initialize UI
 loadFiles();
 updateStorageUsage();
+import { auth, provider, signInWithPopup, signOut, onAuthStateChanged } from './firebase.js';
+
+const loginBtn = document.getElementById("login-btn");
+const logoutBtn = document.getElementById("logout-btn");
+
+loginBtn.onclick = () => {
+  signInWithPopup(auth, provider)
+    .then((result) => {
+      const user = result.user;
+      console.log("Signed in as:", user.displayName);
+      loginBtn.style.display = "none";
+      logoutBtn.style.display = "block";
+      // Show upload UI
+    })
+    .catch((error) => {
+      console.error("Login failed:", error);
+    });
+};
+
+logoutBtn.onclick = () => {
+  signOut(auth).then(() => {
+    console.log("Signed out");
+    loginBtn.style.display = "block";
+    logoutBtn.style.display = "none";
+    // Hide upload UI
+  });
+};
+
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    loginBtn.style.display = "none";
+    logoutBtn.style.display = "block";
+    // Enable file upload
+  } else {
+    loginBtn.style.display = "block";
+    logoutBtn.style.display = "none";
+    // Disable file upload
+  }
+});
