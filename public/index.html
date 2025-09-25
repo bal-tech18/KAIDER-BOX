@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>KAIDER BOX</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <header class="branding">
+      <div class="title-block">
+        <h1>KAIDER BOX</h1>
+        <p class="subtitle">By Kaider Corporation</p>
+      </div>
+    </header>
+
+    <header class="intro">
+      <h1>WELCOME TO OUR WEB</h1>
+      <p>Founded by: Eden, Kaitleen, Ofbaler Jr.</p>
+    </header>
+
+    <section class="storage">
+      <div class="circle">
+        <div class="progress" id="progressCircle">0%</div>
+      </div>
+      <div class="storage-info">
+        <span id="freeSpace">25 GB free</span>
+        <span id="usedSpace">0 GB used</span>
+      </div>
+    </section>
+
+    <section class="categories">
+      <h2>Category</h2>
+      <div class="grid">
+        <div class="card docs">📄 Docs</div>
+        <div class="card images">🖼️ Images</div>
+        <div class="card videos">🎥 Videos</div>
+        <div class="card music">🎵 Music</div>
+      </div>
+    </section>
+
+    <section class="recent">
+      <h2>Recent</h2>
+      <ul id="fileList"></ul>
+    </section>
+
+    <form id="uploadForm">
+      <input type="file" id="fileInput" required />
+      <button type="submit">Upload</button>
+    </form>
+
+    <nav class="bottom-nav">
+      <span>🏠</span>
+      <span>📁</span>
+      <span>⚙️</span>
+    </nav>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

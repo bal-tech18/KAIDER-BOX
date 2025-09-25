@@ -1,0 +1,19 @@
+{
+  "name": "kaider-box-a",
+  "version": "1.0.0",
+  "description": "Kaider box Software",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "firebase": "^12.3.0",
+    "multer": "^2.0.2"
+  }
+}
